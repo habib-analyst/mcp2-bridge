@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mcp2-bridge"
+version = "0.1.0"
+description = "Working LangGraph <-> MCP 2.x adapter + compat shim (langchain-mcp-adapters 0.3.2 pins mcp<2.0.0)"
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.10"
+authors = [{ name = "Habib Ur Rehman", email = "habib.gcuf.edu@gmail.com" }]
+keywords = ["mcp", "model-context-protocol", "langgraph", "langchain", "agents"]
+dependencies = [
+    "mcp>=2.0.0",
+    "langchain-core>=1.0.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/habib-analyst/mcp2-bridge"
+Issues = "https://github.com/habib-analyst/mcp2-bridge/issues"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
+
+[tool.setuptools]
+license-files = ["LICENSE*"]
